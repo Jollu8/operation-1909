@@ -3,16 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#101116">
+<meta name="theme-color" content="#15131a">
+<meta name="description" content="У вас новое секретное задание.">
+<meta property="og:title" content="OPERATION №1909">
+<meta property="og:description" content="У вас новое секретное задание.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OPERATION №1909">
+<meta name="twitter:description" content="У вас новое секретное задание.">
 <title>Operation №1909</title>
 <style>
 :root{--bg:#0d0e12;--card:#171920;--card2:#1d2029;--text:#f5f3ee;--muted:#a9adba;--line:#303440;--accent:#f0c674;--good:#8bd3a8;--danger:#e99191}
-*{box-sizing:border-box} body{margin:0;min-height:100svh;background:
-radial-gradient(circle at 20% 0%,#26202b 0,transparent 36%),
-radial-gradient(circle at 100% 100%,#17242a 0,transparent 35%),var(--bg);
-color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+*{box-sizing:border-box} body{margin:0;min-height:100svh;background:#111116;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden;position:relative}
+body:before,body:after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:-2;filter:blur(10px);transition:opacity 1.2s ease,filter 1.2s ease}
+body:before{background:radial-gradient(circle at 18% 18%,rgba(115,72,92,.28),transparent 34%),radial-gradient(circle at 82% 76%,rgba(74,96,104,.20),transparent 37%),radial-gradient(circle at 52% 46%,rgba(240,198,116,.07),transparent 30%);animation:ambient 22s ease-in-out infinite alternate}
+body:after{background:radial-gradient(circle at 70% 25%,rgba(167,87,116,.13),transparent 30%),radial-gradient(circle at 30% 80%,rgba(225,153,92,.09),transparent 32%);animation:ambient2 28s ease-in-out infinite alternate}
+body.warm:before{filter:blur(8px) saturate(1.25);opacity:1}body.approved-bg:after{opacity:1;filter:blur(6px) saturate(1.45)}
+@keyframes ambient{from{transform:translate3d(-2%,-1%,0) scale(1)}to{transform:translate3d(3%,2%,0) scale(1.08)}}
+@keyframes ambient2{from{transform:translate3d(2%,-2%,0) scale(1.04)}to{transform:translate3d(-3%,3%,0) scale(1.12)}}
 .shell{min-height:100svh;display:grid;place-items:center;padding:22px}
-.card{width:min(680px,100%);background:rgba(23,25,32,.92);border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:0 24px 80px rgba(0,0,0,.38);backdrop-filter:blur(16px);position:relative;overflow:hidden}
+.card{width:min(680px,100%);background:rgba(27,27,34,.88);border:1px solid rgba(73,75,88,.72);border-radius:26px;padding:26px;box-shadow:0 24px 80px rgba(0,0,0,.38);backdrop-filter:blur(16px);position:relative;overflow:hidden}
 .top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:26px}
 .brand{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:800}.step{font-size:12px;color:var(--muted)}
 .progress{height:5px;background:#292c35;border-radius:20px;overflow:hidden;margin-bottom:28px}.progress>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),#fff0b8);transition:width .5s ease}
@@ -26,7 +36,7 @@ button:hover{transform:translateY(-2px);border-color:#6d7180;background:#242732}
 .summary{display:grid;gap:10px;margin:22px 0}.row{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid #2c303a}.row span:first-child{color:var(--muted)}.row b{text-align:right}
 .stamp{display:inline-block;border:3px solid var(--good);color:var(--good);font-weight:900;letter-spacing:.12em;padding:8px 12px;border-radius:8px;transform:rotate(-4deg);margin:4px 0 18px}
 textarea{width:100%;min-height:100px;resize:vertical;background:#101217;color:var(--text);border:1px solid #393d49;border-radius:14px;padding:14px;font:inherit;outline:none}textarea:focus{border-color:var(--accent)}
-.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;background:#f5f3ee;color:#111;padding:10px 15px;border-radius:999px;font-weight:800;font-size:13px;transition:.25s;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}
+.easter{cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;background:#f5f3ee;color:#111;padding:10px 15px;border-radius:999px;font-weight:800;font-size:13px;transition:.25s;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}
 .confetti{position:fixed;top:-20px;width:9px;height:14px;border-radius:2px;animation:fall linear forwards;z-index:20;pointer-events:none}
 @keyframes enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes fall{to{transform:translateY(110vh) rotate(900deg);opacity:.8}}
@@ -48,17 +58,23 @@ textarea{width:100%;min-height:100px;resize:vertical;background:#101217;color:va
   <main class="card" id="card"><i class="scanline"></i>
     <div class="top"><div class="brand">OPERATION №1909</div><div class="step" id="step">SYSTEM READY</div></div>
     <div class="progress"><i id="bar"></i></div>
-    <section id="app"></section>
+    <section id="app" aria-live="polite" aria-atomic="true" tabindex="-1"></section>
   </main>
 </div>
 <div class="toast" id="toast"></div>
 <script>
 const app=document.querySelector('#app'), step=document.querySelector('#step'), bar=document.querySelector('#bar');
+const storageKey='operation-1909-state';
 const state={nickname:'',drink:null,place:null,label:null,day:null,time:null,condition:''};
 let n=0; const total=7;
 const esc=s=>String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
-function set(html,idx=n){n=idx;step.textContent=idx?`ЭТАП ${String(idx).padStart(2,'0')} / ${String(total).padStart(2,'0')}`:'SYSTEM READY';bar.style.width=(idx/total*100)+'%';app.innerHTML=`<div class="screen">${html}</div>`;window.scrollTo({top:0,behavior:'smooth'})}
+function persist(){try{localStorage.setItem(storageKey,JSON.stringify(state))}catch(e){}}
+function clearPersisted(){try{localStorage.removeItem(storageKey)}catch(e){}}
+function set(html,idx=n){n=idx;persist();step.textContent=idx?`ЭТАП ${String(idx).padStart(2,'0')} / ${String(total).padStart(2,'0')}`:'SYSTEM READY';bar.style.width=(idx/total*100)+'%';app.innerHTML=`<div class="screen">${html}</div>`;const heading=app.querySelector('h1,h2');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true})}window.scrollTo({top:0,behavior:'smooth'})}
 function toast(t){const x=document.querySelector('#toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
+let easterClicks=0;
+function easterEgg(){easterClicks++;if(easterClicks===1)toast('SYSTEM: действие зарегистрировано.');if(easterClicks===2)toast('SYSTEM: серьёзно?');if(easterClicks>=3){toast('SYSTEM: пожалуйста, не давайте организатору новых идей.');easterClicks=0;fx('shake')}}
+
 function confetti(){const cs=['#f0c674','#8bd3a8','#e99191','#aeb8ff','#f5f3ee'];for(let i=0;i<90;i++){let e=document.createElement('i');e.className='confetti';e.style.left=Math.random()*100+'vw';e.style.background=cs[i%cs.length];e.style.animationDuration=(2.2+Math.random()*2.5)+'s';e.style.animationDelay=(Math.random()*.8)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),5500)}}
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 function fx(name){const c=document.querySelector('#card');c.classList.remove('shake','pulse','glitch');void c.offsetWidth;c.classList.add(name);setTimeout(()=>c.classList.remove(name),800)}
@@ -66,12 +82,18 @@ async function systemSequence(lines,next,idx=n){set(`<div class="eyebrow">Сис
 function operator(text){return `<div class="operator"><b>ОПЕРАТОР:</b> ${text}</div>`}
 
 function intro(){
+document.body.classList.remove('warm','approved-bg');
 set(`<div class="eyebrow">Совершенно несекретный протокол</div><h1>У тебя есть одна небольшая миссия.</h1>
 <p>Она займёт примерно две минуты. Возможные побочные эффекты: любопытство, улыбка и планы на вечер.</p>
-<div class="buttons"><button class="primary" onclick="callsign()">НАЧАТЬ ОПЕРАЦИЮ</button></div><p class="muted" style="margin-top:16px">Никаких прыжков с парашютом. Пока что.</p>`,0)}
+<div class="buttons"><button class="primary" onclick="callsign()">НАЧАТЬ ОПЕРАЦИЮ</button><button onclick="surprise()">🎲 РЕЖИМ СЮРПРИЗ</button></div><p class="muted" style="margin-top:16px">Никаких прыжков с парашютом. <span class="easter" onclick="easterEgg()">Пока что.</span></p>`,0)}
+function surprise(){
+const pick=items=>items[Math.floor(Math.random()*items.length)];
+Object.assign(state,{nickname:'Агент 1909',drink:pick(['☕ Кофе','🍸 Коктейль','🥤 Без алкоголя']),place:pick(['🕯 Тихое уютное место','🚶 Прогулка + импровизация','🎲 Удиви меня']),label:'🎲 Сюрприз',day:pick(['Будний вечер','Пятница','Выходные']),time:pick(['После работы','Вечером','Договоримся потом']),condition:'Организатор выбирает детали'});
+set(`<div class="eyebrow">Автоматический протокол</div><h2>Система решила рискнуть за вас.</h2><p>Случайный сценарий собран. Если звучит хорошо, его можно подтвердить или пересобрать.</p>${operator('Ответственность за неожиданный выбор временно передана генератору.')}<div class="buttons"><button class="primary" onclick="summary()">ПРОВЕРИТЬ СЦЕНАРИЙ</button><button onclick="surprise()">↻ Пересобрать</button><button class="danger" onclick="restart()">Начать обычную операцию</button></div>`,2)
+}
 function callsign(){set(`<div class="eyebrow">Идентификация участника</div><h2>Каждой серьёзной операции нужен позывной.</h2>
 <p>Укажи имя, псевдоним или секретный позывной. Настоящие паспортные данные системе совершенно не интересны.</p>
-<input id="nickname" maxlength="32" autocomplete="off" placeholder="Например: Agent K, Котик, Не скажу…" style="width:100%;background:#101217;color:var(--text);border:1px solid #393d49;border-radius:14px;padding:15px;font:inherit;outline:none">
+<input id="nickname" aria-label="Позывной" maxlength="32" autocomplete="off" placeholder="Например: Agent K, Котик, Не скажу…" style="width:100%;background:#101217;color:var(--text);border:1px solid #393d49;border-radius:14px;padding:15px;font:inherit;outline:none">
 <p class="muted" style="margin-top:10px">Можно оставить пустым. Система что-нибудь придумает сама.</p>
 <div class="buttons"><button class="primary" onclick="saveCallsign()">ПОДТВЕРДИТЬ ЛИЧНОСТЬ</button></div>`,1)}
 function saveCallsign(){const v=document.querySelector('#nickname').value.trim();state.nickname=v||'Агент 1909';systemSequence([
@@ -96,7 +118,7 @@ function who(){set(`<h2>Разумный вопрос.</h2><div class="terminal"
 <p>Обновить показания?</p><div class="buttons"><button onclick="reveal()">Тогда интересно 👀</button><button onclick="details()">Мне нужно больше информации</button><button class="danger" onclick="declineCheck()">А-а-а, тогда нет 😂</button></div>`,2)}
 function suspicious(){set(`<h2>И правильно.</h2><p>Подозрительно много интерфейса для вопроса, который нормальный человек мог бы задать одним сообщением.</p>
 <div class="buttons"><button class="primary" onclick="reveal()">Ладно, продолжай</button></div>`,2)}
-function reveal(){systemSequence([
+function reveal(){document.body.classList.add('warm');systemSequence([
 ['Получен подозрительно положительный ответ…','',500],
 ['Анализируем последствия ████░░░░░░ 41%','',420],
 ['Анализируем последствия ███████░░░ 73%','',420],
@@ -108,8 +130,8 @@ function details(){set(`<h2>Условия операции</h2><p>Никаки�
 <div class="buttons"><button class="primary" onclick="drink()">Так уже лучше</button><button class="danger" onclick="declineCheck()">Всё ещё нет</button></div>`,3)}
 function declineCheck(){set(`<h2>Получен ответ: НЕТ.</h2><div class="terminal">Система немного расстроилась.<br>Проверяем вероятность случайного нажатия… ██████████ 100%<br><span class="warn">Возможно, пользователь недостаточно ознакомлен с условиями.</span></div>
 <div class="buttons"><button onclick="details()">Ладно, покажи условия</button><button class="danger" onclick="declined()">Нет, я действительно отказываюсь</button></div>`,3)}
-function declined(){set(`<div class="eyebrow">Операция завершена</div><h2>Принято 😌</h2><p>Никаких апелляций и бюрократии. Но за прохождение этого странного квеста всё равно начислено <b>+10 к уважению</b>.</p>
-<div class="buttons"><button onclick="intro()">↻ Начать заново</button></div>`,0)}
+function declined(){clearPersisted();set(`<div class="eyebrow">Операция завершена</div><h2>Принято 😌</h2><p>Никаких апелляций и бюрократии. Но за прохождение этого странного квеста всё равно начислено <b>+10 к уважению</b>.</p>
+<div class="buttons"><button onclick="restart()">↻ Начать заново</button></div>`,0)}
 function drink(){set(`<div class="eyebrow">Конструктор вечера</div><h2>Выбери главное оружие.</h2><div class="buttons">
 <button onclick="pickDrink('☕ Кофе')">☕ Кофе <span class="muted">— классика и надёжность</span></button>
 <button onclick="pickDrink('🍷 Вино')">🍷 Вино <span class="muted">— уровень серьёзности повышен</span></button>
@@ -126,13 +148,13 @@ function label(){set(`<div class="eyebrow">Юридический отдел</di
 <button onclick="pickLabel('Просто выпить')">🥤 Просто выпить</button><button onclick="pickLabel('Мини-свидание')">🙂 Мини-свидание</button>
 <button onclick="pickLabel('Свидание 👀')">👀 Свидание</button><button onclick="pickLabel('Без названия')">🤐 Не будем давать этому название</button></div>`,5)}
 function pickLabel(v){state.label=v;if(v==='Свидание 👀'){dateCrash()}else{when()}}
-async function dateCrash(){set(`<div class="terminal" id="crash">> Получен ответ…</div>`,5);await sleep(800);document.querySelector('#crash').innerHTML+=`<br><br>...`;await sleep(700);document.querySelector('#crash').innerHTML+=`<br><br><span class="warn">Подождите.</span><br>Система обнаружила слово: <b>«СВИДАНИЕ»</b>`;fx('glitch');await sleep(1050);document.querySelector('#crash').innerHTML+=`<br>Проверяем ещё раз…`;await sleep(800);document.querySelector('#crash').innerHTML+=`<br><span class="ok">${esc(state.nickname)} действительно это нажала.</span>`;await sleep(850);set(`<div class="big-status">SYSTEM CRITICAL:<br>ORGANIZER.EXE IS NOT RESPONDING</div><div class="terminal">Перезапуск эмоционального модуля…<br><span class="ok">✓ Восстановлено</span></div>${operator('Ладно. Продолжаем как профессионалы. Сделаем вид, что ничего не произошло.')}<div class="buttons"><button class="primary" onclick="when()">ПРОДОЛЖИТЬ КАК ПРОФЕССИОНАЛЫ</button></div>`,5);fx('shake')}
+async function dateCrash(){set(`<div class="terminal" id="crash">> Получен ответ…</div>`,5);await sleep(800);document.querySelector('#crash').innerHTML+=`<br><br>...`;await sleep(700);document.querySelector('#crash').innerHTML+=`<br><br><span class="warn">Подождите.</span><br>Система обнаружила слово: <b>«СВИДАНИЕ»</b>`;fx('glitch');await sleep(1050);document.querySelector('#crash').innerHTML+=`<br>Проверяем ещё раз…`;await sleep(800);document.querySelector('#crash').innerHTML+=`<br><span class="ok">${esc(state.nickname)} действительно это нажала.</span>`;await sleep(850);set(`<div class="big-status">SYSTEM CRITICAL:<br>ORGANIZER.EXE IS NOT RESPONDING</div><div class="terminal">[ಠ_ಠ]<br><br>Оператор несколько секунд смотрит в монитор…<br>Перезапуск эмоционального модуля…<br><span class="ok">✓ Восстановлено</span></div>${operator('Ладно. Продолжаем как профессионалы. Сделаем вид, что ничего не произошло.')}<div class="buttons"><button class="primary" onclick="when()">ПРОДОЛЖИТЬ КАК ПРОФЕССИОНАЛЫ</button></div>`,5);fx('shake')}
 function when(){set(`<div class="eyebrow">Последняя техническая часть</div><h2>Когда тебя легче всего похитить на пару часов?</h2><p class="muted">(В рамках закона.)</p><div class="buttons">
 <button onclick="pickDay('Будний вечер')">🌆 Будний вечер</button><button onclick="pickDay('Пятница')">✨ Пятница</button><button onclick="pickDay('Выходные')">🌤 Выходные</button><button onclick="pickDay('Договоримся потом')">📡 Пока не знаю</button></div>`,6)}
 function pickDay(v){state.day=v;set(`<h2>А по времени?</h2><div class="buttons"><button onclick="pickTime('После работы')">После работы</button><button onclick="pickTime('Вечером')">Вечером</button><button onclick="pickTime('Поздно вечером')">Поздно вечером</button><button onclick="pickTime('Договоримся потом')">Договоримся потом</button></div>`,6)}
 function pickTime(v){state.time=v;condition()}
 function condition(){set(`<div class="eyebrow">Дополнительный протокол</div><h2>Есть особые условия?</h2><p>Можно оставить пустым. Или написать что-нибудь вроде «место выбираешь ты».</p>
-<textarea id="condition" placeholder="Моё условие…"></textarea><div class="buttons"><button class="primary" onclick="saveCondition()">СОБРАТЬ ПРОТОКОЛ</button></div>`,7)}
+<textarea id="condition" aria-label="Особые условия" placeholder="Моё условие…"></textarea><div class="buttons"><button class="primary" onclick="saveCondition()">СОБРАТЬ ПРОТОКОЛ</button></div>`,7)}
 function saveCondition(){state.condition=document.querySelector('#condition').value.trim();summary()}
 function summary(){set(`<div class="eyebrow">Миссия сформирована</div><h2>Проверим протокол.</h2><div class="summary">
 <div class="row"><span>Участник</span><b>${esc(state.nickname)}</b></div><div class="row"><span>Напиток</span><b>${esc(state.drink)}</b></div><div class="row"><span>Атмосфера</span><b>${esc(state.place)}</b></div>
@@ -154,15 +176,20 @@ async function sendResult(){
     completed_at:new Date().toLocaleString("ru-RU")
   };
   try{
+    const controller=new AbortController();
+    const timeout=setTimeout(()=>controller.abort(),8000);
     const r=await fetch("https://formspree.io/f/xppwqa",{
       method:"POST",
       headers:{"Content-Type":"application/json","Accept":"application/json"},
-      body:JSON.stringify(payload)
+      body:JSON.stringify(payload),
+      signal:controller.signal
     });
+    clearTimeout(timeout);
     return r.ok;
   }catch(e){ return false; }
 }
 async function approved(){
+  document.body.classList.add('warm','approved-bg');
   confetti();
   set(`<div class="stamp">✓ APPROVED</div><h1>Операция одобрена.</h1><p>Поздравляем. Ты успешно прошла самый неоправданно сложный способ получить приглашение куда-нибудь выпить.</p>
 <div class="summary"><div class="row"><span>Участник</span><b>${esc(state.nickname)}</b></div><div class="row"><span>Напиток</span><b>${esc(state.drink)}</b></div><div class="row"><span>Место</span><b>${esc(state.place)}</b></div><div class="row"><span>Статус</span><b>${esc(state.label)}</b></div><div class="row"><span>Когда</span><b>${esc(state.day)} · ${esc(state.time)}</b></div>${state.condition?`<div class="row"><span>Условие</span><b>${esc(state.condition)}</b></div>`:''}</div>
@@ -171,16 +198,18 @@ async function approved(){
   const pct=document.createElement('div');pct.className='percent';pct.textContent='97%';app.insertBefore(pct,app.querySelector('.terminal'));
   for(const x of [98,99,100]){await sleep(280);pct.textContent=x+'%';if(x===100)fx('pulse')}
   const ok=await sendResult();
+  clearPersisted();
   const d=document.querySelector("#delivery");
   if(d) d.innerHTML=ok
     ? `<span class="ok">✓ РЕЗУЛЬТАТ ОТПРАВЛЕН ОРГАНИЗАТОРУ</span><br><br>Но почтовые алгоритмы — существа загадочные.<br>Сделай скриншот этого экрана и отправь его мне — это ускорит обработку чрезвычайно важной заявки и спасёт её от возможного путешествия в спам.<br><br><span class="warn">ОПЕРАТОР: ладно, признаю. Это сработало.</span>`
     : `<span class="warn">⚠ АВТОМАТИЧЕСКАЯ ПЕРЕДАЧА НЕ ПОДТВЕРЖДЕНА</span><br><br>Никакой паники. Сделай скриншот этого экрана и отправь его мне — резервный канал связи ещё никто не отменял.`;
 }
-function approved_old_unused(){confetti();set(`<div class="stamp">✓ APPROVED</div><h1>Операция одобрена.</h1><p>Поздравляем. Ты успешно прошла самый неоправданно сложный способ получить приглашение куда-нибудь выпить.</p>
-<div class="summary"><div class="row"><span>Участник</span><b>${esc(state.nickname)}</b></div><div class="row"><span>Напиток</span><b>${esc(state.drink)}</b></div><div class="row"><span>Место</span><b>${esc(state.place)}</b></div><div class="row"><span>Статус</span><b>${esc(state.label)}</b></div><div class="row"><span>Когда</span><b>${esc(state.day)} · ${esc(state.time)}</b></div>${state.condition?`<div class="row"><span>Условие</span><b>${esc(state.condition)}</b></div>`:''}</div>
-<div class="terminal"><span class="ok">✓ РЕЗУЛЬТАТ ПОДТВЕРЖДЁН</span><br><br>Сделай скриншот этого экрана и отправь его мне.<br><span class="warn">Это ускорит обработку чрезвычайно важной заявки и защитит её от загадочных почтовых алгоритмов.</span></div>
-<p class="muted">P.S. Да, я действительно мог просто спросить. Но где тогда веселье?</p>`,7)}
-intro();
+function restart(){Object.assign(state,{nickname:'',drink:null,place:null,label:null,day:null,time:null,condition:''});clearPersisted();document.body.classList.remove('warm','approved-bg');intro()}
+function resume(){if(state.time)return summary();if(state.day)return condition();if(state.label)return when();if(state.place)return label();if(state.drink)return place();if(state.nickname)return identity();intro()}
+function loadState(){try{const saved=JSON.parse(localStorage.getItem(storageKey));if(saved&&typeof saved==='object'){Object.assign(state,saved);return true}}catch(e){}return false}
+if(loadState()){
+  set(`<div class="eyebrow">Незавершённая операция</div><h2>Продолжить с сохранёнными данными?</h2><p>Система нашла локальный протокол. Ничего не отправлено организатору.</p><div class="buttons"><button class="primary" onclick="resume()">ПРОДОЛЖИТЬ ОПЕРАЦИЮ</button><button onclick="restart()">Начать заново</button></div>`,n)
+}else intro();
 </script>
 </body>
 </html>
