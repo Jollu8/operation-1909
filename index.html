@@ -178,7 +178,7 @@ async function sendResult(){
   try{
     const controller=new AbortController();
     const timeout=setTimeout(()=>controller.abort(),8000);
-    const r=await fetch("https://formspree.io/f/xppwqa",{
+    const r=await fetch("https://formspree.io/f/xppwqaar",{
       method:"POST",
       headers:{"Content-Type":"application/json","Accept":"application/json"},
       body:JSON.stringify(payload),
@@ -195,7 +195,7 @@ async function approved(){
 <div class="summary"><div class="row"><span>Участник</span><b>${esc(state.nickname)}</b></div><div class="row"><span>Напиток</span><b>${esc(state.drink)}</b></div><div class="row"><span>Место</span><b>${esc(state.place)}</b></div><div class="row"><span>Статус</span><b>${esc(state.label)}</b></div><div class="row"><span>Когда</span><b>${esc(state.day)} · ${esc(state.time)}</b></div>${state.condition?`<div class="row"><span>Условие</span><b>${esc(state.condition)}</b></div>`:''}</div>
 <div class="terminal" id="delivery"><span class="warn">⟳ Передаём секретный протокол организатору…</span></div>
 <p class="muted">P.S. Да, я действительно мог просто спросить. Но где тогда веселье?</p>`,7);
-  const pct=document.createElement('div');pct.className='percent';pct.textContent='97%';app.insertBefore(pct,app.querySelector('.terminal'));
+  const pct=document.createElement('div');pct.className='percent';pct.textContent='97%';app.querySelector('#delivery').before(pct);
   for(const x of [98,99,100]){await sleep(280);pct.textContent=x+'%';if(x===100)fx('pulse')}
   const ok=await sendResult();
   clearPersisted();
